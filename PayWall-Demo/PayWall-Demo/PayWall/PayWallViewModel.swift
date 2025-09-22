@@ -11,23 +11,22 @@ import SwiftUI
 
 @Observable class PayWallViewModel {
     var subscriptionPlan: SubscriptionPlan = .starter
-
+    
     enum SubscriptionPlan {
         case starter
         case active
         case alive
     }
-
+    
     var title: String { details.title }
     var subtitle: String { details.subtitle }
     var bullets: [Bullet] { details.bullets }
     var includedMonthlyCredits: String { details.includedCredits }
     
     var legalAttributedString: AttributedString {
-        // 1. Start with the full text
         var attributedString = AttributedString("Cancel anytime. Subscription auto-renews. By joining you agree to our privacy policy and terms of use.")
         attributedString.font = .footnote
-
+        
         if let infoRange = attributedString.range(of: "Cancel anytime. Subscription auto-renews. By joining you agree to our") {
             attributedString[infoRange].foregroundColor = .black.opacity(0.5)
         }
@@ -35,14 +34,13 @@ import SwiftUI
         if let andRange = attributedString.range(of: "and") {
             attributedString[andRange].foregroundColor = .black.opacity(0.5)
         }
-        // 2. Find and link "privacy policy"
+        
         if let privacyRange = attributedString.range(of: "privacy policy") {
             attributedString[privacyRange].link = URL(string: "https://www.google.com")
             attributedString[privacyRange].underlineStyle = .single
             attributedString[privacyRange].foregroundColor = .black
         }
         
-        // 3. Find and link "terms of use"
         if let termsRange = attributedString.range(of: "terms of use") {
             attributedString[termsRange].link = URL(string: "https://www.google.com")
             attributedString[termsRange].underlineStyle = .single

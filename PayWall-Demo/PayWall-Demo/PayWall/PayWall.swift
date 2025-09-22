@@ -36,6 +36,8 @@ struct PayWall: View {
             Text(viewModel.legalAttributedString)
                 .multilineTextAlignment(.center)
                 .lineLimit(2)
+                .frame(maxHeight: 30)
+                .minimumScaleFactor(0.1)
         }
         .padding(.top, 15)
         .padding(.horizontal, 20)
@@ -69,7 +71,9 @@ struct PayWall: View {
             }
             .minimumScaleFactor(0.3)
             Spacer()
-        }.padding(.bottom, 15)
+        }
+        .frame(maxHeight: 70)
+        .padding(.bottom, 15)
     }
     
     private var subscriptionDetails: some View {
@@ -86,7 +90,7 @@ struct PayWall: View {
             .foregroundStyle(.black)
             .fontWeight(.light)
             .frame(height: 25)
-            .minimumScaleFactor(0.3)
+            .minimumScaleFactor(0.2)
             
             Button(action: {
                 
@@ -187,8 +191,7 @@ struct PayWall: View {
             ) {
                 viewModel.subscriptionPlan = .alive
             }
-        }
-        .animation(.easeInOut, value: viewModel.subscriptionPlan)
+        }.animation(.easeInOut, value: viewModel.subscriptionPlan)
     }
     
     private var payButtons: some View {
