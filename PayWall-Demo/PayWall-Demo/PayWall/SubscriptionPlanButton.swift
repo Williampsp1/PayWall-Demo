@@ -48,7 +48,8 @@ struct SubscriptionPlanButton: View {
         .background(
             RoundedRectangle(cornerRadius: 15)
                 .fill(.white)
-                .stroke(.planBorder, lineWidth: 1)
+                .stroke(isSelected ? .planBorder : .clear, lineWidth: 1)
+                .shadow(color: .gray.opacity(0.5), radius: 1)
         )
         .overlay(alignment: .top) {
             if let discount {

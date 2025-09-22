@@ -144,9 +144,8 @@ struct PayWall: View {
                 .background {
                     RoundedRectangle(cornerRadius: 6)
                         .fill(.white)
-                        .shadow(color: .black.opacity(0.7), radius: 1)
+                        .shadow(color: .black.opacity(0.5), radius: 1)
                 }
-                
             }
         }
         .padding(20)
@@ -217,6 +216,7 @@ struct PayWall: View {
             .background(
                 RoundedRectangle(cornerRadius: 15)
                     .fill(.paywallButtonBG)
+                    .shadow(color: .gray.opacity(0.5), radius: 3)
             )
             Spacer()
             Button(action: {
@@ -246,6 +246,7 @@ struct PayWall: View {
             .background(
                 RoundedRectangle(cornerRadius: 15)
                     .fill(.paywallButtonBG)
+                    .shadow(color: .gray.opacity(0.5), radius: 3)
             )
         }.buttonStyle(.plain)
     }
