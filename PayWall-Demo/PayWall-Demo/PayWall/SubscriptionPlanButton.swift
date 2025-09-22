@@ -60,7 +60,7 @@ struct SubscriptionPlanButton: View {
                 }
                 .foregroundStyle(.black)
                 .padding(.horizontal, 4)
-                .frame(maxWidth: 46, maxHeight: 15)
+                .frame(maxWidth: 50, maxHeight: 15)
                 .minimumScaleFactor(0.1)
                 .background(
                     RoundedRectangle(cornerRadius: 4)

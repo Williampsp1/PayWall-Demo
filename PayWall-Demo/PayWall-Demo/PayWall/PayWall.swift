@@ -23,9 +23,7 @@ struct PayWall: View {
                         .foregroundStyle(.black)
                         .fontWeight(.medium)
                 }
-                
             }.padding(.bottom, 15)
-            
             header
             subscriptionDetails
             Spacer()
@@ -235,7 +233,9 @@ struct PayWall: View {
                         
                         Text("18% off")
                             .fontWeight(.light)
+                            .font(.footnote)
                             .foregroundStyle(.white.opacity(0.6))
+                            
                     }.lineLimit(1)
                 }
                 .frame(height: 20)
